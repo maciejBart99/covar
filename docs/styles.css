@@ -429,14 +429,20 @@ a:hover {
 .info-panels__subtitle span {
     font-weight: 600;
 }
+.--green {
+    color: rgb(0, 197, 138) !important;
+}
 .--orange {
-    color: #ff8f57;
+    color: #ff8f57 !important;
 }
 .--yellow {
-    color: #ffca38;
+    color: #ffca38 !important;
 }
 .--purple {
-    color: #b00064;
+    color: #b00064 !important;
+}
+.green-fill {
+    fill: rgb(0, 197, 138) !important;
 }
 
 

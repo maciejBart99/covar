@@ -72,7 +72,7 @@
             <div class="main-container">
                 <div class="map-view__header">
                     <div class="map-view__title-section">
-                        <h2 class="map-view__title">Monitoring of SARS-COV-2 variants in Poland</h2>
+                        <h2 class="map-view__title">Monitor of SARS-COV-2 variants in Poland</h2>
                     </div>
                     <div class="map-view__tab-container">
                         <div id="gisaid" onclick="switchSource('gisaid')" class="map-view__tab">
@@ -88,8 +88,8 @@
                         <h4 class="map-view__filters-title">In the selected period</h4>
                         <div class="info-panels__group">
                             <div class="info-panels__pane">
-                                <h4 id="wild" class="info-panels__main --yellow">-</h4>
-                                <p class="info-panels__subtitle">cases of <br><span class="--yellow">wild</span><br> variants</p>
+                                <h4 id="wild" class="info-panels__main --green">-</h4>
+                                <p class="info-panels__subtitle">cases of <br><span class="--green">wild</span><br> variants</p>
                             </div>
                             <div class="info-panels__pane">
                                 <h4 id="alert" class="info-panels__main --orange">-</h4>
@@ -245,9 +245,9 @@ ranges.forEach((obj, i) => buildMarker(obj, i, 'slider'));
 const colorMap = {
     brytyjski: '#ff8f57',
     poludniowoafrykanski: '#b00064',
-    brazylijski: 'green',
+    brazylijski: '#b00064',
     indyjski: '#b00064',
-    dziki: '#ffca38'
+    dziki: '#00c58a'
 };
 
 const scaleSzerokosc = d3.scaleLinear()
@@ -333,7 +333,7 @@ async function reload() {
             divTooltip.transition()        
                 .duration(200)      
                 .style("opacity", .9);      
-            divTooltip.html('<svg><rect class="cls-3" x="15" y="0" width="142.84" height="110"/><rect class="cls-3" x="25" y="0" width="11.38" height="11.38" transform="rotate(45)"/><text class="cls-27"  transform="translate(25 15)">'+d.miasto+'<tspan x="0" y="17.8">Alpha (British): </tspan><tspan class="cls-36" >' + d.brytyjski +'</tspan><tspan x="0" y="35.6">Beta (African): </tspan><tspan class="cls-36" >' + d.poludniowoafrykanski +'</tspan><tspan x="0" y="53.4">Gamma (Brazilian): </tspan><tspan class="cls-36" >' + d.brazylijski +'</tspan><tspan x="0" y="70.4">Delta (Indian): </tspan><tspan class="cls-36" >' + d.indyjski +'</tspan><tspan x="0" y="87">Other: </tspan><tspan class="cls-8">' + d.dziki +'</tspan></text></svg>')
+            divTooltip.html('<svg><rect class="cls-3" x="15" y="0" width="142.84" height="110"/><rect class="cls-3" x="25" y="0" width="11.38" height="11.38" transform="rotate(45)"/><text class="cls-27"  transform="translate(25 15)">'+d.miasto+'<tspan x="0" y="17.8">Alpha (British): </tspan><tspan class="cls-36" >' + d.brytyjski +'</tspan><tspan x="0" y="35.6">Beta (African): </tspan><tspan class="cls-36" >' + d.poludniowoafrykanski +'</tspan><tspan x="0" y="53.4">Gamma (Brazilian): </tspan><tspan class="cls-36" >' + d.brazylijski +'</tspan><tspan x="0" y="70.4">Delta (Indian): </tspan><tspan class="cls-36" >' + d.indyjski +'</tspan><tspan x="0" y="87">Other: </tspan><tspan class="green-fill">' + d.dziki +'</tspan></text></svg>')
                 .style("left", (d3.event.pageX) + "px")     
                 .style("top", (d3.event.pageY - 28) + "px");    
             })                  
